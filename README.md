@@ -15,58 +15,24 @@
 
 在开始之前，请确保您已经具备以下条件：
 
-- Python 3.7 或更高版本
+- 已安装Docker、Docker Compose
 - Telegram 账号
 - 已安装哪吒监控 Dashboard 并完成配置
 - Telegram 机器人 Token（通过 [BotFather](https://t.me/BotFather) 获取）
 
-### 🔧 安装步骤
+### 🔧 快速安装
 
-1. **克隆仓库**
+直接使用下方代码一键安装，安装目录在/opt/nezha-telegram-bot（记得替换`{此处填写你的Telegram 机器人 Token}`）
+```
+mkdir /opt/nezha-telegram-bot && cd /opt/nezha-telegram-bot && curl -L https://github.com/ClassmateShen/Nezha-Telegram-Bot-V1-Docker/raw/main/docker-compose-precompiled.yml -o docker-compose.yml && export TELEGRAM_TOKEN={此处填写你的Telegram 机器人 Token} && docker compose up -d
+```
 
-   ```bash
-   git clone https://github.com/yourusername/nezha-telegram-bot.git
-   cd nezha-telegram-bot
-   ```
+### 🧰 自行编译
 
-2. **创建虚拟环境**
-
-   推荐使用 `venv` 创建虚拟环境：
-
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # 对于 Windows 用户使用 venv\Scripts\activate
-   ```
-
-3. **安装依赖**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **配置环境变量**
-
-   为了安全起见，建议使用环境变量存储敏感信息。创建一个 `.env` 文件并添加以下内容：
-
-   ```env
-   TELEGRAM_TOKEN=your_telegram_bot_token
-   ```
-
-5. **初始化数据库**
-
-   数据库会在首次运行时自动创建。
-
-6. **运行机器人**
-
-   ```bash
-   python bot.py
-   ```
-
-   您应该会看到类似以下的日志输出，表示机器人已成功启动：
-
-   ```
-   2024-12-08 17:50:39,139 - telegram.ext.Application - INFO - Application started
-   ```
+直接使用下方代码一键执行自己编译，安装目录在/opt/nezha-telegram-bot（记得替换`{此处填写你的Telegram 机器人 Token}`和`{此处填写你的用户名（可随便填）}`）
+```
+mkdir /opt/nezha-telegram-bot && cd /opt/nezha-telegram-bot && git clone https://github.com/ClassmateShen/Nezha-Telegram-Bot-V1-Docker.git && export TELEGRAM_TOKEN={此处填写你的Telegram 机器人 Token} && export USERNAME={此处填写你的用户名（可随便填）} && docker compose up -d
+```
 
 ## 🛠️ 使用指南
 
@@ -113,6 +79,7 @@
 
 ## 🙏 致谢
 
+- [Nezha-Telegram-Bot-V1](https://github.com/nezhahq/Nezha-Telegram-Bot-V1) - Nezha Telegram Bot - NextGen V1 原生版本
 - [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) - 用于 Telegram 机器人的开发。
 - [aiohttp](https://github.com/aio-libs/aiohttp) - 异步 HTTP 客户端/服务器框架。
 - [aiosqlite](https://github.com/jreese/aiosqlite) - 异步 SQLite 连接库。
