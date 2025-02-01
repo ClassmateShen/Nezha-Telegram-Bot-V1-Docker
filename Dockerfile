@@ -4,6 +4,16 @@ FROM python:3.11-slim
 # 设置工作目录
 WORKDIR /app
 
+# 安装系统依赖项
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    libpq-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # 复制当前目录下的所有文件到工作目录
 COPY . /app
 
