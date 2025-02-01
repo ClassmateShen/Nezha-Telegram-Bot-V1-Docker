@@ -4,7 +4,5 @@ services:
     image: shentx/nezha-telegram-bot:latest
     container_name: nezha-telegram-bot
     restart: unless-stopped
-    volumes:
-      - /opt/nezha-telegram-bot:/app
     environment:
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
