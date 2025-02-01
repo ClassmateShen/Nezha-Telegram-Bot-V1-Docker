@@ -29,9 +29,9 @@ if [ ! -d "/opt/nezha-telegram-bot" ]; then mkdir -p "/opt/nezha-telegram-bot";f
 
 ### 🧰 自行编译
 
-直接使用下方代码一键执行自己编译，安装目录在`/opt/nezha-telegram-bot`（记得替换`{此处填写你的Telegram 机器人 Token}`和`{此处填写你的用户名（可随便填）}`）
+直接使用下方代码一键执行自己编译，安装目录在`/opt/Nezha-Telegram-Bot-V1-Docker`（记得替换`{此处填写你的Telegram 机器人 Token}`和`{此处填写你的用户名（可随便填）}`）
 ```
-if [ ! -d "/opt/nezha-telegram-bot" ]; then mkdir -p "/opt/nezha-telegram-bot";fi;cd "/opt/nezha-telegram-bot";if [ ! -d "./docker-compose.yml" ]; then rm -rf "./docker-compose.yml";fi && git clone https://github.com/ClassmateShen/Nezha-Telegram-Bot-V1-Docker.git && export TELEGRAM_TOKEN={此处填写你的Telegram 机器人 Token} && export USERNAME={此处填写你的用户名（可随便填）} && docker compose up -d
+if [ ! -d "/opt/nezha-telegram-bot" ]; then rm -rf "/opt/nezha-telegram-bot";fi;cd "/opt/nezha-telegram-bot && git clone https://github.com/ClassmateShen/Nezha-Telegram-Bot-V1-Docker.git $$ cd ./Nezha-Telegram-Bot-V1-Docker && export TELEGRAM_TOKEN={此处填写你的Telegram 机器人 Token} && export USERNAME={此处填写你的用户名（可随便填）} && docker compose up -d
 ```
 
 ## 🛠️ 使用指南
